@@ -1139,5 +1139,6 @@ def upload_single():
 
 
 if __name__ == '__main__':
-    print("\n[OK] HS Code Extractor running at http://localhost:5000\n")
-    app.run(debug=True, port=5000, threaded=True, use_reloader=False)
+    port = int(os.environ.get("PORT", 5000))
+    print(f"\n[OK] HS Code Extractor running at http://0.0.0.0:{port}\n")
+    app.run(host="0.0.0.0", port=port, threaded=True, use_reloader=False)
